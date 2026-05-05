@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  background: #fafafa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: #0f172a;
+  background: #fafafa;
+  letter-spacing: 0;
+}
+
+html.dark body {
+  color: #f8fafc;
+  background: #050505;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  letter-spacing: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: .58;
+}
+
+::selection {
+  color: white;
+  background: #0f172a;
+}
+
+@layer components {
+  .container-fluid {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .premium-card {
+    @apply rounded-2xl border border-slate-200 bg-white shadow-card transition-all duration-300 hover:border-slate-950/30 hover:shadow-card-hover;
+  }
+
+  .premium-input {
+    @apply h-12 rounded-xl border border-slate-200 bg-white px-4 outline-none transition-shadow focus:border-slate-950 focus:ring-4 focus:ring-slate-950/10;
+  }
+
+  .icon-button {
+    @apply inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-700 transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-950 hover:bg-slate-950 hover:text-white;
+  }
+
+  .primary-gradient {
+    @apply bg-slate-950 text-white shadow-[0_12px_28px_rgba(15,23,42,.18)] transition-all duration-200 hover:scale-[1.02] hover:bg-white hover:text-slate-950 hover:ring-1 hover:ring-slate-950 active:scale-95;
+  }
+}
+
+html.dark .bg-white,
+html.dark .bg-white\/80,
+html.dark .bg-white\/90 {
+  background-color: rgba(10, 10, 10, .92) !important;
+}
+
+html.dark .bg-slate-50,
+html.dark .bg-slate-100 {
+  background-color: #171717 !important;
+}
+
+html.dark .bg-slate-950 {
+  background-color: #ffffff !important;
+}
+
+html.dark .text-slate-950,
+html.dark .text-slate-900,
+html.dark .text-slate-700,
+html.dark .text-slate-600 {
+  color: #f8fafc !important;
+}
+
+html.dark .text-white {
+  color: #050505 !important;
+}
+
+html.dark .border-slate-200,
+html.dark .border-slate-200\/80 {
+  border-color: rgba(255,255,255,.14) !important;
+}
+
+html.dark .border-slate-950 {
+  border-color: #ffffff !important;
+}
+
+html.dark .shadow-card,
+html.dark .shadow-card-hover {
+  box-shadow: 0 0 0 1px rgba(255,255,255,.06), 0 20px 60px rgba(0,0,0,.45) !important;
+}
